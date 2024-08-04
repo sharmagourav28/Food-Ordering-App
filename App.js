@@ -64,9 +64,9 @@ const RestaurantCard = (props) => {
         src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="res-img"
       />
-      <h3>{resData.name}</h3>
-      <h4>Cakes,Cheez Cakes</h4>
-      <h4>4.3 Start Rating</h4>
+      <h3>{resData.info.name}</h3>
+      <h4>{resData.info.cuisines}</h4>
+      <h4>{resData.info.avgRating}</h4>
       <h4>38 Mins</h4>
     </div>
   );
