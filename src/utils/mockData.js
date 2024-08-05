@@ -1,81 +1,3 @@
-import { yellowgreen } from "color-name";
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/*
-Header
-    logo
-    navicons items
-body
-    search bar inputs
-    Restauerant conatainer
-        restauaratnt card
-        image
-        name of restaro
-        start rating
-        cuisines
-        delivery times
-
-Footer
-    copyright
-    linkes
-    address
-    contact
-*/
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "namsta from react"
-// );
-
-const HeaderComponents = () => {
-  return (
-    <div className="header">
-      <div className="logo-conatiner">
-        <img
-          className="logo"
-          src="https://img.freepik.com/premium-vector/online-food-app-icon-food-shop-location-logo-also-online-resturent-location-template_608547-155.jpg"
-          alt="logo-image"
-        />
-      </div>
-
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Carts</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const styleCard = {
-  backgroundColor: "#c8e3e2",
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { name, cuisines, avgRating, cloudinaryImageId } = resData?.data;
-  return (
-    <div className="res-card" style={styleCard}>
-      <img
-        className="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="res-img"
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>38 Mins</h4>
-    </div>
-  );
-};
-
 const resList = [
   {
     info: {
@@ -370,7 +292,7 @@ const resList = [
       areaName: "Sarafa",
       costForTwo: "₹150 for two",
       cuisines: ["South Indian", "Indian"],
-      avgRating: 4.5,
+      avgRating: 3.5,
       veg: true,
       parentId: "166607",
       avgRatingString: "4.5",
@@ -461,7 +383,7 @@ const resList = [
       areaName: "Mukeri Pura",
       costForTwo: "₹300 for two",
       cuisines: ["Indian", "North Indian"],
-      avgRating: 4.4,
+      avgRating: 3.4,
       parentId: "168288",
       avgRatingString: "4.4",
       totalRatingsString: "1K+",
@@ -523,29 +445,106 @@ const resList = [
       type: "DEEPLINK",
     },
   },
+  {
+    info: {
+      id: "84070",
+      name: "Gurukripa Restaurant - Sarwate",
+      cloudinaryImageId: "g5txnz35wlrgbskk3r8y",
+      locality: "Sarwate",
+      areaName: "South Tukoganj",
+      costForTwo: "₹250 for two",
+      cuisines: [
+        "North Indian",
+        "Thalis",
+        "Indian",
+        "Fast Food",
+        "Chinese",
+        "Beverages",
+        "Desserts",
+        "Jain",
+        "Punjabi",
+      ],
+      avgRating: 3.4,
+      veg: true,
+      parentId: "92204",
+      avgRatingString: "4.4",
+      totalRatingsString: "10K+",
+      sla: {
+        deliveryTime: 33,
+        lastMileTravel: 4.8,
+        serviceability: "SERVICEABLE",
+        slaString: "30-35 mins",
+        lastMileTravelString: "4.8 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-08-05 23:59:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "Rxawards/_CATEGORY-North%20Indian.png",
+            description: "Delivery!",
+          },
+          {
+            imageId: "v1695133679/badges/Pure_Veg111.png",
+            description: "pureveg",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "Delivery!",
+                  imageId: "Rxawards/_CATEGORY-North%20Indian.png",
+                },
+              },
+              {
+                attributes: {
+                  description: "pureveg",
+                  imageId: "v1695133679/badges/Pure_Veg111.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+      externalRatings: {
+        aggregatedRating: {
+          rating: "--",
+        },
+      },
+      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+    },
+    analytics: {},
+    cta: {
+      link: "https://www.swiggy.com/restaurants/gurukripa-restaurant-sarwate-sarwate-south-tukoganj-indore-84070",
+      type: "WEBLINK",
+    },
+  },
 ];
 
-const BodyComponents = () => {
-  return (
-    <div className="body">
-      <div className="search">search</div>
-      <div className="rest-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <HeaderComponents />
-      <BodyComponents />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
