@@ -17,7 +17,7 @@ const Body = () => {
       json?.data.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setListofRestautant(
-      json?.data.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   return (
