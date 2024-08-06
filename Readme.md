@@ -1,4 +1,5 @@
-/\*
+#
+
 Header
 logo
 navicons items
@@ -17,9 +18,11 @@ copyright
 linkes
 address
 contact
-\*/
+
 // const heading = React.createElement(
 // "h1",
 // { id: "heading" },
 // "namsta from react"
 // );
+
+# when the state varibale changed the whole components will onces again render
