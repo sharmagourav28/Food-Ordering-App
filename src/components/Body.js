@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 const Body = () => {
   const [listofRestaurant, setListofRestautant] = useState([]);
+  const [searchText, setsearchText] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
@@ -31,6 +32,31 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // Filter the restaurtant card and update the UI
+              // Search text our here
+              console.log(searchText);
+              const filterres = listofRestaurant.filter((res) => {
+                console.log(res.info.name);
+                res.info.name.toLowerCase().includes(searchText.toLowerCase());
+              });
+              console.log(filterres);
+              setListofRestautant(filterres);
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {

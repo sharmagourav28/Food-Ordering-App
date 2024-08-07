@@ -26,3 +26,5 @@ contact
 // );
 
 # when the state varibale changed the whole components will onces again render
+
+# when the local state variable change the whole the react will re- rendee onces again
