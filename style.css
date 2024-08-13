@@ -63,3 +63,57 @@
   height: 400px;
   background-color: rgb(224, 217, 217);
 }
+
+/* User Cards */
+.about {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.user {
+  padding: 10px;
+  border: 2px solid black;
+  display: flex;
+}
+
+.git-img img {
+  height: 250px;
+  width: 400px;
+}
+
+.btn {
+  display: flex;
+}
+.increase {
+  background-color: blue;
+  color: aliceblue;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.increase:hover {
+  background-color: white;
+  color: blue;
+  border: 1px solid black;
+}
+.decrease {
+  margin-left: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  background-color: burlywood;
+  cursor: pointer;
+}
+.decrease:hover {
+  background-color: rgb(80, 79, 79);
+  color: burlywood;
+  border: 1px solid black;
+}
+.countfn {
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}

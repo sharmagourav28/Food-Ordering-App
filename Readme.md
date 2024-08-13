@@ -34,10 +34,9 @@ contact
 - client side routing
 - server side routing
 
-# {/\* if path is / =>
+# in class based components first the constructor is called and then render is called and then componentsdidMount is called (normal)
 
-      <Body />
-      {/* if path is /about =>  */}
-      {/* <About /> */}
-      {/* if path is /contact =>  */}
-      {/* <Contact /> */}
+# parent & child class components
+
+- phela parent com k construcotr called hoga fer render called at the time of calling child calle hoga and it will triggee that child components
+  child construcotor called and render called and then componentsmount child called then parent componetnsdidMount called
